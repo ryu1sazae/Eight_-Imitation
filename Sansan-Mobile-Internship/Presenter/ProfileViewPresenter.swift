@@ -9,24 +9,41 @@
 import Foundation
 
 // TODO: 課題3 フェーズ1
-// インタフェースを定義
+
+//
+func Success() {
+    //
+}
+
+func Fail() {
+    //
+}
+
+func FailToRecogniza(){
+    //
+}
 
 final class ProfileViewPresenter {
     private let jsonParser: ProfileJSONParserProtocol
     private let apiClient: GoogleVisonAPIClientProtocol
-
+    private let profile: ProfileViewPresenter
+    
     init(jsonParser: ProfileJSONParserProtocol,
          apiClient: GoogleVisonAPIClientProtocol) {
         self.jsonParser = jsonParser
         self.apiClient = apiClient
         // TODO: 課題3 フェーズ2
         // イニシャライザでViewを受け取る
+        var profile = ProfileViewController.init()
     }
 
     func loadProfile(from base64String: String) {
         apiClient.send(base64String: base64String) { (data, error) in
             // TODO: 課題3 フェーズ3
             // jsonParserを利用してOCR結果をパースし、Viewに伝える
+//            var profileCreater = profile.
+//
+//            profile = ProfileJSONParser(profileCreater: )
         }
     }
 }

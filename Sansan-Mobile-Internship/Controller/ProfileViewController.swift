@@ -22,6 +22,11 @@ final class ProfileViewController: UIViewController {
         let controller = UIStoryboard(name: "Profile", bundle: nil).instantiateInitialViewController() as! ProfileViewController
         controller.loadViewIfNeeded()
         controller.configure(with: imageData)
+
+        let base64 = imageData.base64EncodedString()
+
+        let client = GoogleVisonAPIClient.init()
+        client.send(base64String: base64, completion: {_,_ in })
         return controller
     }
 
