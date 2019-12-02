@@ -34,7 +34,7 @@ final class ProfileViewPresenter {
         self.apiClient = apiClient
         // TODO: 課題3 フェーズ2
         // イニシャライザでViewを受け取る
-        var profile = ProfileViewController.init()
+        self.profile = ProfileViewPresenter.init(jsonParser: self.jsonParser, apiClient: self.apiClient)
     }
 
     func loadProfile(from base64String: String) {
